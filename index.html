@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<title>market agung</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="jual beli.css" href="jual beli baru.css">
+</head>
+<body>
+
+<header class="header">   
+        <center><h1><b>🎮 GUNZ PEDIA</h1></center></b>
+        <center><p>Top Up & Beli Akun Game terpercaya📱</p></center>
+    </div>
+</header>
+
+<nav class="menu">
+    <button onclick="showSection('topup')" class="active">Top Up</button>
+    <button onclick="showSection('akun')">Akun Game</button>
+    <button onclick="showSection('cart')">🛒 Cart (<span id="cartCount">0</span>)</button>
+
+</nav>
+
+<main>
+
+<!-- TOP UP GAME -->
+<section id="topup" class="section active">
+
+    <div class="card game-ml" data-name="mobile legends ml diamond">
+    <img src="emel legend.jpg" alt="Mobile Legends" width="100" height="100">
+    <h3>Mobile Legends</h3>
+    <button onclick="addCart('ML 86 Diamond',76000)">86 Diamond💎</button>
+    <button onclick="addCart('ML 172 Diamond',210000)">172 Diamond💎</button>
+</div>
+
+    <div class="card game-ff" data-name="free fire ff diamond">
+    <img src="epep.jpg" alt="Free Fire" width="100" height="100">
+    <h3>Free Fire</h3>
+    <button onclick="addCart('FF 140 Diamond',90000)">140 Diamond💎</button>
+    <button onclick="addCart('FF 355 Diamond',250000)">355 Diamond💎</button>
+</div>
+
+   <div class="card game-pubg" data-name="pubg mobile uc">
+    <img src="babaji.jpg" alt="PUBG Mobile" width="100" height="100">
+    <h3>PUBG Mobile</h3>
+    <button onclick="addCart('PUBG 60 UC',45000)">60 UC💎</button>
+    <button onclick="addCart('PUBG 325 UC',250000)">325 UC💎</button>
+</div>
+
+    <div class="card game-genshin" data-name="genshin impact genesis">
+    <img src="wibu.jpg" alt="Genshin Impact" width="100" height="100">
+    <h3>Genshin Impact</h3>
+    <button onclick="addCart('Genshin 300 Genesis',100000)">300 Genesis💎</button>
+    <button onclick="addCart('Genshin 980 Genesis',560000)">980 Genesis💎</button>
+</div>
+
+
+</section>
+
+<!-- AKUN GAME -->
+<section id="akun" class="section">
+
+ <input type="text" id="idAkun" placeholder="ID Akun">
+<input type="text" id="server" placeholder="Server">
+
+<button onclick="batalTransaksi()">Batal</button>
+<button onclick="resetTransaksi()">Reset</button>
+
+        <script>
+function resetTransaksi() {
+    document.getElementById("idAkun").value = "";
+    document.getElementById("server").value = "";
+
+    // kalau ada cart / pilihan produk
+    const cartCount = document.getElementById("cartCount");
+    if (cartCount) {
+        cartCount.innerText = "0";
+    }
+
+    alert("Transaksi berhasil direset!");
+}
+
+function batalTransaksi() {
+    // tutup modal kalau ada
+    document.getElementById("modalBatal").style.display = "none";
+}
+</script>
+
+    <div class="card">
+        <img src="akun emel.jpg" width="300" height="140">
+        <h3><b>Akun mobile legend, glory/imo💸</h3></b>
+        <p>kolector sultan</p>
+        <span>Rp 5.000.000</span>
+        <button onclick="addCart('Akun ML Mythic',5000000)">Buy/Beli</button>
+    </div>
+        
+        <div class="card">
+        <img src="emel akun.jpg" width="300" height="140">
+        <h3><b>Akun mobile legend, legend/mitik💸</h3></b>
+        <p>kolector juragan</p>
+        <span>Rp 2.000.000</span>
+        <button onclick="addCart('Akun ML Legend',2000000)">Buy/Beli</button>
+    </div>
+        
+        <div class="card">
+        <img src="akun epep becek.jpg" width="300" height="150">
+        <h3><b>Akun FF Sultan💸</h3></b>
+        <p>Bundle Langka + lucky royale lengkap</p>
+        <span>Rp 3.500.000</span>
+        <button onclick="addCart('Akun FF Sultan',3500000)">Buy/Beli</button>
+    </div>
+        
+        <div class="card">
+        <img src="akun pubg.jpg" width="300" height="150">
+        <h3><b>Akun PUBG💸</h3></b>
+        <p>lengkap sultan dewa</p>
+        <span>Rp 20.000.000</span>
+        <button onclick="addCart('Akun PUBG Ace',20000000)">Buy/Beli</button>
+    </div>
+        
+</section>       
+                
+                <!-- CART -->
+<section id="cart" class="section">
+    <h3><b>🛒 Keranjang</h3></b>
+    <ul id="cartItems"></ul>
+
+    <p>Total: <strong id="total">Rp 0</strong></p>
+
+    <select id="payment">
+        <option value="">Pilih Pembayaran</option>
+        <option>DANA</option>
+        <option>OVO</option>
+        <option>GoPay</option>
+        <option>ShopeePay</option>
+        <option>Bank Transfer</option>
+    </select>
+
+    <button onclick="checkout()">Bayar/Pay</button>
+</section>
+
+</main>
+
+
+<footer>
+        <div class="footer-column">
+                <marquee><h4><b style="color:blue">👇❗FOLLOW KAMI DISINI❗👇</h4></marquee></b>
+                <div class="social-icons">
+                        <a href="https://www.instagram.com/itz.4gungg10?igsh=MTlydnNmY2M1d2UwNA=="><img src="igphoto.png" width="30"></a>
+                        <a href="https://www.tiktok.com/@agungbarusadar10?_r=1&_t=ZS-93ZmnZMTTY8"><img src="ttphoto.png" width="30"></a>
+                </div>                        
+        <p><b style="color:blue">© gunz pedia | Indonesia🇮🇩</p></b>
+</footer>
+
+<script src="jual beli.js"></script>
+</body>
+</html>
